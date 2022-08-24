@@ -30,7 +30,14 @@ _{Leave nothing to chance! You want it to be easy for potential users, employers
 * _should go here_
 
 ## Tests
-
+<details>
+  <summary>Tests</summary>
+    Describe: diceRoll(); <br>
+    Test 1: Should result in random number from 1-6
+    Code: 
+    diceRoll(1,7);
+    Expected Output: 1 || 2 || 3 || 4 || 5 || 6
+</details>
 ## License
 
 _[MIT](https://en.wikipedia.org/wiki/MIT_License)_
