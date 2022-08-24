@@ -34,7 +34,7 @@ _{Leave nothing to chance! You want it to be easy for potential users, employers
   <summary>Tests</summary>
   Describe: diceRoll(); 
     <br>
-    Test 1: Should result in random number from 1-6 
+  Test 1: Should result in random number from 1-6 
     <br>
     Code: 
     <br>
@@ -43,8 +43,9 @@ _{Leave nothing to chance! You want it to be easy for potential users, employers
     Expected Output: 1 || 2 || 3 || 4 || 5 || 6 
     <br><br>
 
-  Describe: Player(); <br>
-    Test 1: Should result in random number from 1-6 for Player. 
+  Describe: Player(); 
+    <br>
+  Test 1: Should result in random number from 1-6 for Player. 
     <br>
     Code: 
     <br>
@@ -53,8 +54,9 @@ _{Leave nothing to chance! You want it to be easy for potential users, employers
     Expected Output: 1 || 2 || 3 || 4 || 5 || 6 
     <br>
 
-  Describe: totalRoll(); <br>
-    Test 1: Should create an empty array. 
+  Describe: rollArray; 
+    <br>
+  Test 1: Should create an empty array. 
     <br>
     Code: 
     <br>
@@ -62,14 +64,14 @@ _{Leave nothing to chance! You want it to be easy for potential users, employers
     <br>
     Expected Output: [] 
     <br>
-
-    Test 2: Should populate rollArray; with inputted numbers 
-    <br>
+  Test 2: Should populate array with rolled numbers
+     <br>
     Code: 
     <br>
-    totalRoll(1, 2, 3, 4);
+    diceRoll(1, 2, 3)
+    rollArray();
     <br>
-    Expected Output: [1,2,3,4]
+    Expected Output: [1,2,3] 
     <br>
 
 </details>
