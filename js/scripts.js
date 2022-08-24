@@ -1,12 +1,18 @@
 // Business Logic for Dice Roll
-rollArray = [];
-function diceRoll(min, max) {
+Player.prototype.diceRoll = function (min, max) {
   min = Math.ceil(1);
   max = Math.floor(7);
-  return rollArray.push(Math.floor(Math.random() * (max - min) + min));
+  let number = Math.floor(Math.random() * (max - min) + min);
+  if (number !== 1) {
+    this.rollArray.push(number)
+  } else if (number === 1) {
+    return rollArray = []
+  }
 }
 
 //Business Logic for Player
-function Player(roll) {
-  this.roll = diceRoll;
+function Player(variable) {
+  this.rollArray = [];
+  this.total = variable;
 }
+

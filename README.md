@@ -60,7 +60,7 @@ _{Leave nothing to chance! You want it to be easy for potential users, employers
     <br>
     Code: 
     <br>
-    totalRoll(); 
+    playerOne.rollArray;
     <br>
     Expected Output: [] 
     <br>
@@ -68,10 +68,22 @@ _{Leave nothing to chance! You want it to be easy for potential users, employers
      <br>
     Code: 
     <br>
-    diceRoll(1, 2, 3)
-    rollArray();
+    playerOne.roll(1,2,3);
+    playerOne.rollArray;
     <br>
     Expected Output: [1,2,3] 
+    <br>
+
+  Describe: currentTotal(); 
+    <br>
+  Test 1: Should add number in the array
+    <br>
+    Code: 
+    <br>
+  playerOne.rollArray[1,2,3];
+  PlayerOne.currentTotal();
+    <br>
+    Expected Output: 6 
     <br>
 
 </details>
