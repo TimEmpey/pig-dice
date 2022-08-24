@@ -63,6 +63,15 @@ _{Leave nothing to chance! You want it to be easy for potential users, employers
     Expected Output: [] 
     <br>
 
+    Test 2: Should populate rollArray; with inputted numbers 
+    <br>
+    Code: 
+    <br>
+    totalRoll(1, 2, 3, 4);
+    <br>
+    Expected Output: [1,2,3,4]
+    <br>
+
 </details>
 
 ## License

@@ -5,6 +5,13 @@ function diceRoll(min, max) {
   return Math.floor(Math.random() * (max - min) + min);
 }
 
+function totalRoll() {
+  rollArray = [];
+  return rollArray;
+}
+
+
+
 //Business Logic for Player
 function Player(roll) {
   this.roll = diceRoll;
