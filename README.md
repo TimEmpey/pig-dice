@@ -32,12 +32,29 @@ _{Leave nothing to chance! You want it to be easy for potential users, employers
 ## Tests
 <details>
   <summary>Tests</summary>
-    Describe: diceRoll(); <br>
-    Test 1: Should result in random number from 1-6
+  Describe: diceRoll(); 
+    <br>
+    Test 1: Should result in random number from 1-6 
+    <br>
     Code: 
-    diceRoll(1,7);
-    Expected Output: 1 || 2 || 3 || 4 || 5 || 6
+    <br>
+    diceRoll(1,7); 
+    <br>
+    Expected Output: 1 || 2 || 3 || 4 || 5 || 6 
+    <br><br>
+
+  Describe: PlayerOne(); <br>
+    Test 1: Should result in random number from 1-6 for PlayerOne. 
+    <br>
+    Code: 
+    <br>
+    PlayerOne.diceRoll(); 
+    <br>
+    Expected Output: 1 || 2 || 3 || 4 || 5 || 6 
+    <br>
+
 </details>
+
 ## License
 
 _[MIT](https://en.wikipedia.org/wiki/MIT_License)_
