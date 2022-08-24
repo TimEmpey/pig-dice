@@ -86,6 +86,20 @@ _{Leave nothing to chance! You want it to be easy for potential users, employers
     Expected Output: 6 
     <br>
 
+  Describe: totalRoll(); 
+    <br>
+  Test 1: Should add currentTotal to the totalRoll
+    <br>
+    Code: 
+  playerOne.rollArray[1,2,3];
+  PlayerOne.currentTotal();
+  > 6 
+  playerOne.rollArray[1,2,3];
+  PlayerOne.totalRoll(); 
+    <br>
+    Expected Output: 12
+    <br>
+
 </details>
 
 ## License

@@ -10,6 +10,14 @@ Player.prototype.diceRoll = function (min, max) {
   }
 }
 
+Player.prototype.currentTotal = function() {
+  this.currentTotal = 0;
+  for (i = 0; i < this.rollArray.length; i++) {
+    this.currentTotal += this.rollArray[i];
+  } 
+  return this.currentTotal;
+}
+
 //Business Logic for Player
 function Player(variable) {
   this.rollArray = [];
