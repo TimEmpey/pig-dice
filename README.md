@@ -43,14 +43,24 @@ _{Leave nothing to chance! You want it to be easy for potential users, employers
     Expected Output: 1 || 2 || 3 || 4 || 5 || 6 
     <br><br>
 
-  Describe: PlayerOne(); <br>
-    Test 1: Should result in random number from 1-6 for PlayerOne. 
+  Describe: Player(); <br>
+    Test 1: Should result in random number from 1-6 for Player. 
     <br>
     Code: 
     <br>
-    PlayerOne.diceRoll(); 
+    Player.diceRoll(); 
     <br>
     Expected Output: 1 || 2 || 3 || 4 || 5 || 6 
+    <br>
+
+  Describe: totalRoll(); <br>
+    Test 1: Should create an empty array. 
+    <br>
+    Code: 
+    <br>
+    totalRoll(); 
+    <br>
+    Expected Output: [] 
     <br>
 
 </details>
