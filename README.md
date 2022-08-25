@@ -4,6 +4,9 @@
 
 #### _Allows users to play Pig Dice_
 
+## Github Pages:
+### _https://timempey.github.io/pig-dice/_
+
 ## Technologies Used
 
 * _JavaScript_
