@@ -20,6 +20,7 @@ Player.prototype.diceRoll = function (min, max) {
   let number = Math.floor(Math.random() * (max - min) + min);
   if (number !== 1) {
     this.rollArray.push(number)
+    return number;
   } else if (number === 1) {
     toggle.switchPlayer();
     return this.rollArray = [0];
@@ -94,11 +95,14 @@ function handleFormSubmission(event) {
   document.querySelector("span#scoreNameTwo").innerText = playerTwo.name + ("'s ");
   document.querySelector("div#p1Buttons").removeAttribute("class");
   document.getElementById("rollOne").addEventListener("click", function() {
-    playerOne.diceRoll();
+    let diceRollOne = playerOne.diceRoll();
+    diceImage(diceRollOne);
+    console.log(diceRollOne);
     document.querySelector("span#turnPlayerOneScore").innerHTML = playerOne.currentSum();
   });
   document.getElementById("rollTwo").addEventListener("click", function() {
-    playerTwo.diceRoll();
+    let diceRollTwo = playerTwo.diceRoll();
+    diceImage(diceRollTwo);
     document.querySelector("span#turnPlayerTwoScore").innerHTML = playerTwo.currentSum();
   });
   document.getElementById("holdOne").addEventListener("click", function() {
@@ -111,6 +115,25 @@ function handleFormSubmission(event) {
     document.querySelector("span#playerTwoScore").innerHTML = playerTwo.totalRoll();
     toggle.switchPlayer();
   });
+}
+
+function diceImage(number) {
+  document.getElementById("dieTwo").setAttribute("class", "hidden");
+  document.getElementById("dieThree").setAttribute("class", "hidden");
+  document.getElementById("dieFour").setAttribute("class", "hidden");
+  document.getElementById("dieFive").setAttribute("class", "hidden");
+  document.getElementById("dieSix").setAttribute("class", "hidden");
+  if (number === 2) {
+    document.getElementById("dieTwo").removeAttribute("class");
+  } else if (number === 3) {
+    document.getElementById("dieThree").removeAttribute("class");
+  } else if (number === 4) {
+    document.getElementById("dieFour").removeAttribute("class");
+  } else if (number === 5) {
+    document.getElementById("dieFive").removeAttribute("class");
+  } else if (number === 6) {
+    document.getElementById("dieSix").removeAttribute("class");
+  };
 }
 
 window.addEventListener("load", function (){
