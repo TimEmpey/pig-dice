@@ -1,5 +1,12 @@
 h2 {
   text-align: center;
+  font-family: monospace;
+  font-size: 50px;
+  font-weight: bold;
+}
+
+.jumbotron {
+  background-color: pink;
 }
 
 .hidden {
@@ -16,4 +23,9 @@ h2 {
 
 .congrats {
   text-align: center;
+}
+.playerPanel {
+  background-color: lightgrey;
+  padding: 20px;
+  margin-bottom: 20px;
 }
