@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en-US">
   <head>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script> -->
     <link href="css/styles.css" rel="stylesheet" type="text/css">
     <script src="js/scripts.js"></script>
     <title>Pig Dice</title>
@@ -20,24 +20,28 @@
         </form>
       </div>
     </div>
-    <form id="gameboard" class="gameboard">
-      <div class="row">
-        <div class="col-6">
-          <div class="hidden" id="p1Buttons">
-            <button type="click" id="rollOne">Roll</button>
-            <button type="click" id="holdOne">Hold, Add to Score</button>
+    <div class="hidden" id="game">
+      <form id="gameboard" class="gameboard">
+        <div class="row">
+          <div class="col-6">
+            <div class="hidden" id="p1Buttons">
+              <button type="button" id="rollOne">Roll</button>
+              <button type="button" id="holdOne">Hold, Add to Score</button>
+            </div>
+            <p><span id="scoreNameOne"></span>Turn Score: <span id="turnPlayerOneScore"></span></p>
+            <p><span id="scoreNameOne"></span>Total Score: <span id="playerOneScore"></span></p>
           </div>
-          <p><span id="scoreNameOne"></span>Score: <span id="playerOneScore"></span></p>
-        </div>
-        <div class="col-6">
-          <div class="hidden" id="p2Buttons">
-            <button type="click" id="rollTwo">Roll</button>
-            <button type="click" id="holdTwo">Hold, Add to Score</button>
+          <div class="col-6">
+            <div class="hidden" id="p2Buttons">
+              <button type="button" id="rollTwo">Roll</button>
+              <button type="button" id="holdTwo">Hold, Add to Score</button>
+            </div>
+            <p><span id="scoreNameTwo"></span>Turn Score: <span id="turnPlayerTwoScore"></span></p>
+            <p><span id="scoreNameTwo"></span>Total Score: <span id="playerTwoScore"></span></p>
           </div>
-          <p><span id="scoreNameTwo"></span>Score: <span id="playerTwoScore"></span></p>
         </div>
-      </div>
-    </form>
+      </form>
+    </div>
     <div class="hidden" id="winner">
       <div class="congrats">
         <h2>Winner, winner, pig dinner!</h2>

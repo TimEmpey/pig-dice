@@ -48,6 +48,19 @@ function Player(name, variable) {
   this.name = name;
   this.rollArray = [];
   this.total = variable;
+  this.activePlayer = 1;
+}
+
+let player;
+
+Player.prototype.switchPlayer = function () {
+  if (this.activePlayer === 1) {
+    document.querySelector("div#p1Button").setAttribute("class", "hidden");
+    document.querySelector("div#p2Button").removeAttribute("class");
+  } else {
+    document.querySelector("div#p2Button").setAttribute("class");
+    document.querySelector("div#p1Button").removeAttribute("class", "hidden");
+  }
 }
 
 Player.prototype.winner = function() {
@@ -57,29 +70,39 @@ Player.prototype.winner = function() {
 
 // UI Logic
 
+let playerList = new PlayerList();
 
+function handleFormSubmission(event) {
+  event.preventDefault();
+  const playerOneName = document.querySelector("input#player-one-name").value;
+  const playerTwoName = document.querySelector("input#player-two-name").value;
+  let playerOne = new Player(playerOneName, 0);
+  let playerTwo = new Player(playerTwoName, 0);
+  player = new Player(playerOne, playerTwo);
+  document.querySelector("div#game").removeAttribute("class");
+  document.querySelector("span#scoreNameOne").innerText = playerOne.name + ("'s ");
+  document.querySelector("span#scoreNameTwo").innerText = playerTwo.name + ("'s ");
+  document.querySelector("div#p1Buttons").removeAttribute("class");
+  document.getElementById("rollOne").addEventListener("click", function() {
+    playerOne.diceRoll();
+    document.querySelector("span#turnPlayerOneScore").innerHTML = playerOne.currentSum();
+  });
+  document.getElementById("rollTwo").addEventListener("click", function() {
+    playerTwo.diceRoll();
+    document.querySelector("span#turnPlayerTwoScore").innerHTML = playerTwo.currentSum();
+  });
+  document.getElementById("holdOne").addEventListener("click", function() {
+    playerOne.currentScore();
+    document.querySelector("span#playerOneScore").innerHTML = playerOne.total();
+    playerOne.switchPlayer();
+  });
+  document.getElementById("holdTwo").addEventListener("click", function() {
+    playerTwo.currentScore();
+    document.querySelector("span#playerTwoScore").innerHTML = playerTwo.total();
+    playerTwo.switchPlayer();
+  });
+}
 
-// let playerList = new PlayerList();
-
-// function displayScore(event) {
-//   const player1 = document.querySelector("input#player-one-name").value;
-//   const player2 = document.querySelector("input#player-two-name").value;
-//   document.querySelector("span#scoreNameOne").innerText = player1.playerNameOne + (" ");
-//   document.querySelector("span#scoreNameTwo").innerText = player2.playerNameTwo + (" ");
-// }
-
-// function handleFormSubmission(event) {
-//   event.preventDefault();
-//   const playerOneName = document.querySelector("input#player-one-name").value;
-//   const playerTwoName = document.querySelector("input#player-two-name").value;
-//   let playerOne = new Player(playerOneName, 0);
-//   let playerTwo = new Player(playerTwoName, 0);
-//   playerList.addPlayer(playerOne);
-//   playerList.addPlayer(playerTwo);
-//   displayScore(playerList);
-// }
-
-// window.addEventListener("load", function (){
-//   document.querySelector("form#playerNameOne").addEventListener("submit", handleFormSubmission);
-//   document.querySelector("form#playerNameTwo").addEventListener ("submit", handleFormSubmission);
-// });
+window.addEventListener("load", function (){
+  document.querySelector("form#playerInput").addEventListener("submit", handleFormSubmission);
+});
