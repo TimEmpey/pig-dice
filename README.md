@@ -1,8 +1,8 @@
-# _{Application Name}_
+# _Pig Dice_
 
-#### By _**{List of contributors}**_
+#### By _**Tim Empey and Ted Gold**_
 
-#### _{Brief description of application}_
+#### _Allows users to play Pig Dice_
 
 ## Technologies Used
 
@@ -13,21 +13,18 @@
 
 ## Description
 
-_{This is a detailed description of your application. Give as much detail as needed to explain what the application does as well as any other information you want users or other developers to have.}_
+_Starts with two input boxes for users names which are collected with the submit button prompting the score boards to be un-hidden. Two buttons to roll or hold appear allowing users to roll, which logs the number to your turn score and hold which adds your turn score to the total. Rolling a 1 or pressing hold moves the buttons to the second player initiating their turn. First to 100 points wins. This is the wikipedia page to the game: _
 
 ## Setup/Installation Requirements
 
 * _Open up your terminal and navigate to the desired landing folder_
-* _In terminal enter, ' "git clone https://github.com/TimEmpey/mr-robogers-neighborhood '_
+* _In terminal enter, ' "git clone https://github.com/TimEmpey/pig-dice '_
 * _In terminal enter 'code .' to open files in Visual Studio Code_
 * _In Visual Code Studio select the 'Go Live' option on the bottom task bar_
 
-_{Leave nothing to chance! You want it to be easy for potential users, employers and collaborators to run your app. Do I need to run a server? How should I set up my databases? Is there other code this application depends on? We recommend deleting the project from your desktop, re-cloning the project from GitHub, and writing down all the steps necessary to get the project working again.}_
-
 ## Known Bugs
 
-* _Any known issues_
-* _should go here_
+* _There are no known issues_
 
 ## Tests
 <details>
@@ -106,5 +103,5 @@ _{Leave nothing to chance! You want it to be easy for potential users, employers
 
 _[MIT](https://en.wikipedia.org/wiki/MIT_License)_
 
-Copyright (c) _2022_ _Timohy Empey_
+Copyright (c) _2022_ _Timohy Empey & Ted Gold_
 
