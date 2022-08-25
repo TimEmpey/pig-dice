@@ -10,36 +10,39 @@
   <body>
     <h2>Welcome to Pig Dice!</h2>
     <div class="row">
-      <div class="col-6">
-        <form id="playerNameOne">
-        <label for="player-one-name">Enter Your Pig Name for Player 1!</label>
-        <input type="text" id="player-one-name" name="player-one-name">
-        <button type="submit" id="submitOne">Submit</button>
-        <br><br>
-        <button type="click" id="rollOne">Roll</button>
-        <br><br>
-          <button type="click" id="holdOne">Hold, Add to Score</button>
-        </form>
-        <br>
-        <p><span id="scoreNameOne"></span>Score: <span id="playerOneScore"></span></p>
-      </div>
-      <div class="col-6">
-        <form id="playerNameTwo">
+      <div class="col-12">
+        <form id="playerInput" class="playerInput">
+          <label for="player-one-name">Enter Your Pig Name for Player 1!</label>
+          <input type="text" id="player-one-name" name="player-one-name">
           <label for="player-two-name">Enter Your Pig Name for Player 2!</label>
           <input type="text" id="player-two-name" name="player-two-name">
-          <button type="submit" id="submitTwo">Submit</button>
-          <br><br>
-          <button type="click" id="rollTwo">Roll</button>
-          <br><br>
-          <button type="click" id="holdTwo">Hold, Add to Score</button>
+          <button type="submit" id="submit">Submit</button> 
         </form>
-        <br>
-        <p><span id="scoreNameTwo"></span>Score: <span id="playerTwoScore"></span></p>
       </div>
     </div>
+    <form id="gameboard" class="gameboard">
+      <div class="row">
+        <div class="col-6">
+          <div class="hidden" id="p1Buttons">
+            <button type="click" id="rollOne">Roll</button>
+            <button type="click" id="holdOne">Hold, Add to Score</button>
+          </div>
+          <p><span id="scoreNameOne"></span>Score: <span id="playerOneScore"></span></p>
+        </div>
+        <div class="col-6">
+          <div class="hidden" id="p2Buttons">
+            <button type="click" id="rollTwo">Roll</button>
+            <button type="click" id="holdTwo">Hold, Add to Score</button>
+          </div>
+          <p><span id="scoreNameTwo"></span>Score: <span id="playerTwoScore"></span></p>
+        </div>
+      </div>
+    </form>
     <div class="hidden" id="winner">
-      <h2>Winner, winner, pig dinner!</h2>
-      <h4><span id="winnerName"></span></h4>
+      <div class="congrats">
+        <h2>Winner, winner, pig dinner!</h2>
+        <h4><span id="winnerName"></span></h4>
+      </div>
     </div>
   </body>
 </html>
