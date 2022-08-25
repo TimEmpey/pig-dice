@@ -13,7 +13,7 @@
 
 ## Description
 
-_Starts with two input boxes for users names which are collected with the submit button prompting the score boards to be un-hidden. Two buttons to roll or hold appear allowing users to roll, which logs the number to your turn score and hold which adds your turn score to the total. Rolling a 1 or pressing hold moves the buttons to the second player initiating their turn. First to 100 points wins. This is the wikipedia page to the game: _
+_Starts with two input boxes for users names which are collected with the submit button prompting the score boards to be un-hidden. Two buttons to roll or hold appear allowing users to roll, which logs the number to your turn score and hold which adds your turn score to the total. Rolling a 1 or pressing hold moves the buttons to the second player initiating their turn. First to 100 points wins. This is the wikipedia page to the game: https://en.wikipedia.org/wiki/Pig_%28dice_game%29_
 
 ## Setup/Installation Requirements
 
@@ -103,5 +103,5 @@ _Starts with two input boxes for users names which are collected with the submit
 
 _[MIT](https://en.wikipedia.org/wiki/MIT_License)_
 
-Copyright (c) _2022_ _Timohy Empey & Ted Gold_
+Copyright (c) _2022_ _Timothy Empey & Ted Gold_
 
