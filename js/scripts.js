@@ -21,7 +21,8 @@ Player.prototype.diceRoll = function (min, max) {
   if (number !== 1) {
     this.rollArray.push(number)
   } else if (number === 1) {
-    return rollArray = []
+    toggle.switchPlayer();
+    return this.rollArray = [0];
   }
 }
 
@@ -29,9 +30,7 @@ Player.prototype.currentSum = function () {
   this.currentTotal = 0;
   for (i = 0; i < this.rollArray.length; i++) {
     this.currentTotal += this.rollArray[i];
-  }  if (this.total >= 100) {
-    this.winner();
-  }
+  } 
   return this.currentTotal;
 }
 
@@ -39,9 +38,12 @@ Player.prototype.totalRoll = function () {
   this.total = this.total;
   for (let i = 0; i < this.rollArray.length; i++) {
     this.total += this.rollArray[i];
+  } if (this.total >= 100) {
+    this.winner();
+  } else {
+    this.rollArray = [];
+    return this.total;
   }
-  this.rollArray = [];
-  return this.total;
 }
 
 function Player(name, variable) {
@@ -51,15 +53,23 @@ function Player(name, variable) {
   this.activePlayer = 1;
 }
 
-let player;
+function Toggle(playerOne, playerTwo) {
+  this.playerOne = playerOne
+  this.playerTwo = playerTwo
+  this.activePlayer = 1;
+}
 
-Player.prototype.switchPlayer = function () {
+let toggle;
+
+Toggle.prototype.switchPlayer = function () {
   if (this.activePlayer === 1) {
-    document.querySelector("div#p1Button").setAttribute("class", "hidden");
-    document.querySelector("div#p2Button").removeAttribute("class");
+    this.activePlayer = 2;
+    document.querySelector("div#p1Buttons").setAttribute("class", "hidden");
+    document.querySelector("div#p2Buttons").removeAttribute("class");
   } else {
-    document.querySelector("div#p2Button").setAttribute("class");
-    document.querySelector("div#p1Button").removeAttribute("class", "hidden");
+    this.activePlayer = 1;
+    document.querySelector("div#p2Buttons").setAttribute("class", "hidden");
+    document.querySelector("div#p1Buttons").removeAttribute("class");
   }
 }
 
@@ -78,7 +88,7 @@ function handleFormSubmission(event) {
   const playerTwoName = document.querySelector("input#player-two-name").value;
   let playerOne = new Player(playerOneName, 0);
   let playerTwo = new Player(playerTwoName, 0);
-  player = new Player(playerOne, playerTwo);
+  toggle = new Toggle(playerOne, playerTwo);
   document.querySelector("div#game").removeAttribute("class");
   document.querySelector("span#scoreNameOne").innerText = playerOne.name + ("'s ");
   document.querySelector("span#scoreNameTwo").innerText = playerTwo.name + ("'s ");
@@ -92,14 +102,14 @@ function handleFormSubmission(event) {
     document.querySelector("span#turnPlayerTwoScore").innerHTML = playerTwo.currentSum();
   });
   document.getElementById("holdOne").addEventListener("click", function() {
-    playerOne.currentScore();
-    document.querySelector("span#playerOneScore").innerHTML = playerOne.total();
-    playerOne.switchPlayer();
+    playerOne.currentSum();
+    document.querySelector("span#playerOneScore").innerHTML = playerOne.totalRoll();
+    toggle.switchPlayer();
   });
   document.getElementById("holdTwo").addEventListener("click", function() {
-    playerTwo.currentScore();
-    document.querySelector("span#playerTwoScore").innerHTML = playerTwo.total();
-    playerTwo.switchPlayer();
+    playerTwo.currentSum();
+    document.querySelector("span#playerTwoScore").innerHTML = playerTwo.totalRoll();
+    toggle.switchPlayer();
   });
 }
 
